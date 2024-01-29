@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5rem;
+  background: rgba(170, 170, 170, 0.6666666667);
+}
+.container .card-wrapper {
+  width: 100%;
+  max-width: 50rem;
+  position: relative;
+  aspect-ratio: 11/3;
+}
+.container .card-wrapper .sun {
+  position: absolute;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  height: 55%;
+  background: #fff;
+  right: -3%;
+  top: -9%;
+  z-index: 2;
+  background: radial-gradient(circle at 75%, #fcfcb3 50%, #fd7d01 80%);
+  transform: rotate(-45deg);
+  box-shadow: 0 0 3px 2.1rem rgba(221, 231, 238, 0.4666666667);
+}
+.container .card-wrapper .card {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, #2667f2, #62cff4);
+  border-radius: 25px;
+  position: relative;
+  color: #fff;
+  padding: 1.6rem;
+  display: flex;
+  overflow: hidden;
+}
+.container .card-wrapper .card .circle {
+  position: absolute;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.container .card-wrapper .card .circle-bottom-left {
+  height: 12rem;
+  background: rgba(39, 161, 255, 0.6666666667);
+  bottom: -6rem;
+  left: -7.5rem;
+}
+.container .card-wrapper .card .circle-top-right-inner,
+.container .card-wrapper .card .circle-top-right-outer {
+  height: 30rem;
+  background: rgba(58, 210, 255, 0.6666666667);
+  right: -14rem;
+  top: -15rem;
+}
+.container .card-wrapper .card .circle-top-right-outer {
+  background: rgba(72, 228, 253, 0.6666666667);
+  height: 35rem;
+  right: -23rem;
+  top: -21rem;
+}
+.container .card-wrapper .card .condition {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .card-wrapper .card .condition .weather {
+  font-size: 1.3rem;
+}
+.container .card-wrapper .card .condition .temperature {
+  font-size: 4rem;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.container .card-wrapper .card .condition .temperature .degree {
+  position: absolute;
+  display: inline-block;
+  height: 0.9rem;
+  width: 0.9rem;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  top: 2px;
+  right: 15%;
+}
+.container .card-wrapper .card .col-divider {
+  width: 5%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .card-wrapper .card .col-divider span {
+  display: inline-block;
+  width: 3px;
+  height: 40%;
+  background: #fff;
+  border-radius: 50%;
+}
+.container .card-wrapper .card .day-location {
+  padding-left: 1rem;
+  flex: 7.5;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.container .card-wrapper .card .day-location .date,
+.container .card-wrapper .card .day-location div {
+  font-size: 1.3rem;
+}
+.container .card-wrapper .card .day-location div {
+  height: 1.5rem;
+}
+.container .card-wrapper .card .day-location div img {
+  height: 100%;
+}/*# sourceMappingURL=card1.css.map */

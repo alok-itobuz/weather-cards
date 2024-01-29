@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body {
+  font-size: 62.5%;
+}
+@mixin setCircle {
+  position: absolute;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5rem;
+  background: #aaaa;
+  .card-wrapper {
+    width: 100%;
+    max-width: 50rem;
+    position: relative;
+    aspect-ratio: 11/3;
+    .sun {
+      @include setCircle();
+      height: 55%;
+      background: #fff;
+      right: -3%;
+      top: -9%;
+      z-index: 2;
+      background: radial-gradient(circle at 75%, #fcfcb3 50%, #fd7d01 80%);
+      transform: rotate(-45deg);
+      box-shadow: 0 0 3px 2.1rem #dde7ee77;
+    }
+    .card {
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(90deg, #2667f2, #62cff4);
+      border-radius: 25px;
+      position: relative;
+      color: #fff;
+      padding: 1.6rem;
+      display: flex;
+      overflow: hidden;
+
+      .circle {
+        @include setCircle();
+      }
+
+      .circle-bottom-left {
+        height: 12rem;
+        background: #27a1ffaa;
+        bottom: -6rem;
+        left: -7.5rem;
+      }
+      .circle-top-right-inner,
+      .circle-top-right-outer {
+        height: 30rem;
+        background: #3ad2ffaa;
+        right: -14rem;
+        top: -15rem;
+      }
+      .circle-top-right-outer {
+        background: #48e4fdaa;
+        height: 35rem;
+        right: -23rem;
+        top: -21rem;
+      }
+
+      .condition {
+        flex: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .weather {
+          font-size: 1.3rem;
+        }
+        .temperature {
+          font-size: 4rem;
+          position: relative;
+          width: 100%;
+          text-align: center;
+          .degree {
+            position: absolute;
+            display: inline-block;
+            height: 0.9rem;
+            width: 0.9rem;
+            border: 3px solid #fff;
+            border-radius: 50%;
+            top: 2px;
+            right: 15%;
+          }
+        }
+      }
+      .col-divider {
+        width: 5%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          display: inline-block;
+          width: 3px;
+          height: 40%;
+          background: #fff;
+          border-radius: 50%;
+        }
+      }
+      .day-location {
+        padding-left: 1rem;
+        flex: 7.5;
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        .date,
+        div {
+          font-size: 1.3rem;
+        }
+        div {
+          height: 1.5rem;
+          img {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
