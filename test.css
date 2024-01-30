@@ -1,0 +1,6 @@
+.moon {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 90px 0, rgb(221, 84, 84) 60px, #abc 70px, blue 10px);
+}/*# sourceMappingURL=test.css.map */

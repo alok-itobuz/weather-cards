@@ -8,17 +8,62 @@
   </head>
   <body>
     <div class="container">
-      <!-- Sunny -->
-      <div class="card card-sunshine">
-        <!-- Circles -->
-        <span class="circle circle-top-right-1"></span>
-        <span class="circle circle-top-right-2"></span>
-        <span class="circle sun"></span>
-        <!-- Card content -->
-        <div class="condition">
-          <span class="weather">Sunny</span>
-          <span class="temperature">25<span class="degree"></span> </span>
+    <!-- Common -->
+    <div class="card card-sunshine">
+      <!-- Rain Card -->
+      <!-- Cloud and Thunder -->
+      <div class="image-container-wrapper cloud-thunder">
+        <div class="image-container">
+          <div class="thunder">
+            <img src="./images/thunder.svg" alt="Thunder" />
+          </div>
+          <img src="./images/cloud.svg" alt="Cloud SVG" />
         </div>
+      </div>
+
+      <!-- Rain drops -->
+      <div class="rain-drops">
+        <span class="drops"></span><span class="drops"></span
+        ><span class="drops"></span>
+      </div>
+      <div class="rain-drops">
+        <span class="drops drop-1"></span><span class="drops drop-3"></span
+        ><span class="drops drop-3"></span>
+      </div>
+      <div class="rain-drops">
+        <span class="drops"></span><span class="drops"></span>
+      </div>
+      <div class="rain-drops">
+        <span class="drops"></span><span class="drops"></span
+        ><span class="drops"></span>
+      </div>
+      <div class="rain-drops">
+        <span class="drops"></span><span class="drops"></span
+        ><span class="drops"></span>
+      </div>
+      <!-- ------------------- -->
+      <!-- Sunshine Card -->
+      <!-- Circles -->
+      <!-- <span class="circle circle-top-right-1"></span>
+      <span class="circle circle-top-right-2"></span>
+      <span class="circle sun"></span> -->
+      <!-- -------------------------- -->
+
+      <!-- Cloudy Night Card -->
+      <!-- CLoud and Moon -->
+      <div class="image-container-wrapper cloud-moon">
+        <div class="image-container">
+          <div class="moon"></div>
+          <img src="./images/cloud.svg" alt="Cloud SVG" />
+        </div>
+      </div>
+      <!-- ----------- -->
+
+      <!-- Card content -->
+      <p class="weather">Sunny</p>
+      <div class="card-content">
+        <p class="condition">25&deg;</p>
+
         <div class="col-divider">
           <span></span>
         </div>
@@ -27,82 +72,6 @@
           <div>
             <img src="./images/location-icon.svg" alt="" /> San Fransisco
           </div>
-        </div>
-      </div>
-      <!-- Cloudy Night  -->
-      <div class="card card-cloudy-night">
-        <!-- CLoud and Moon -->
-        <div class="image-container-wrapper">
-          <div class="image-container">
-            <div class="moon"></div>
-            <img src="./images/cloud.svg" alt="Cloud SVG" />
-          </div>
-        </div>
-
-        <!-- Dots  -->
-        <span class="dots dot-1"></span><span class="dots dot-2"></span
-        ><span class="dots dot-3"></span><span class="dots dot-4"></span
-        ><span class="dots dot-5"></span><span class="dots dot-6"></span
-        ><span class="dots dot-7"></span>
-
-        <!-- Contents -->
-        <div class="condition">
-          <span class="weather">Cloudy Night</span>
-          <span class="temperature">22<span class="degree"></span> </span>
-        </div>
-        <div class="col-divider">
-          <span></span>
-        </div>
-        <div class="day-location">
-          <span class="date">Tuesday, 22 september</span>
-          <div><img src="./images/location-icon.svg" alt="" /> Paris</div>
-        </div>
-      </div>
-
-      <!-- Rain -->
-      <div class="card card-rain">
-        <!-- CLoud and Thunder -->
-        <div class="image-container-wrapper">
-          <div class="image-container">
-            <div class="thunder">
-              <img src="./images/thunder.svg" alt="Thunder" />
-            </div>
-            <img src="./images/cloud.svg" alt="Cloud SVG" />
-          </div>
-        </div>
-
-        <!-- Rain drops -->
-        <div class="rain-drops">
-          <span class="drops"></span><span class="drops"></span
-          ><span class="drops"></span>
-        </div>
-        <div class="rain-drops">
-          <span class="drops"></span><span class="drops"></span
-          ><span class="drops"></span>
-        </div>
-        <div class="rain-drops">
-          <span class="drops"></span><span class="drops"></span>
-        </div>
-        <div class="rain-drops">
-          <span class="drops"></span><span class="drops"></span
-          ><span class="drops"></span>
-        </div>
-        <div class="rain-drops">
-          <span class="drops"></span><span class="drops"></span
-          ><span class="drops"></span>
-        </div>
-
-        <!-- Card content -->
-        <div class="condition">
-          <span class="weather">Rain</span>
-          <span class="temperature">15<span class="degree"></span> </span>
-        </div>
-        <div class="col-divider">
-          <span></span>
-        </div>
-        <div class="day-location">
-          <span class="date">Sunday, 23 september</span>
-          <div><img src="./images/location-icon.svg" alt="" /> London</div>
         </div>
       </div>
     </div>

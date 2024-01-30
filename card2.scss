@@ -1,3 +1,9 @@
+$blue_color: #2667f2;
+$light_blue_color: #62cff4;
+$deep_blue_color: #2862f7;
+$purple_color: #b97fda;
+$green_color: #01bea4;
+$light_green_color: #8dfba3;
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +12,11 @@
 }
 body {
   font-size: 62.5%;
+  height: 100vh;
 }
 .container {
   max-width: 50rem;
+  height: 100%;
   aspect-ratio: 2/1;
   display: flex;
   flex-direction: column;
@@ -17,6 +25,7 @@ body {
   gap: 3rem;
   padding: 5rem;
   font-weight: 300;
+  margin: auto;
 
   // Common Properties
   .card {
@@ -27,67 +36,48 @@ body {
     color: #fff;
     padding: 1.6rem;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     overflow: hidden;
-
-    .condition {
-      flex: 4;
+    > p {
+      font-size: 1.5rem;
+    }
+    .card-content {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      gap: 0.5rem;
-      .weather {
-        font-size: 1.2rem;
-      }
-      .temperature {
-        font-size: 4rem;
+      gap: 0.6rem;
+      .condition {
+        font-size: 4.3rem;
         position: relative;
-        width: 100%;
-        text-align: center;
-        .degree {
-          position: absolute;
-          display: inline-block;
-          height: 0.9rem;
-          width: 0.9rem;
-          border: 3px solid #fff;
+      }
+      .col-divider {
+        width: 1rem;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        span {
+          width: 20%;
+          height: 50%;
+          background: #fff;
           border-radius: 50%;
-          top: 2px;
-          right: 0.8rem;
         }
       }
-    }
-
-    .col-divider {
-      width: 5%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      span {
-        display: inline-block;
-        width: 3px;
-        height: 40%;
-        background: #fff;
-        border-radius: 50%;
-      }
-    }
-
-    .day-location {
-      flex: 13;
-      align-items: flex-start;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 0.5rem;
-      .date,
-      div {
-        font-size: 1.2rem;
-      }
-      div {
-        height: 1.5rem;
-        img {
-          height: 100%;
+      .day-location {
+        // gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .date {
+          flex: 1;
+          font-size: 1.5rem;
+        }
+        > div {
+          flex: 1;
+          font-size: 1.5rem;
+          img {
+            height: 1rem;
+          }
         }
       }
     }
@@ -97,7 +87,14 @@ body {
 
   // Card Sunshine
   .card-sunshine {
-    background: linear-gradient(90deg, #2667f2, #62cff4);
+    background: linear-gradient(90deg, $blue_color, $light_blue_color);
+    .dots,
+    .cloud-moon,
+    .cloud-thunder,
+    .rain-drops {
+      display: none;
+    }
+
     .circle {
       position: absolute;
       aspect-ratio: 1/1;
@@ -123,28 +120,22 @@ body {
       top: -2rem;
       z-index: 2;
       background: radial-gradient(
-        circle at 80%,
-        #fcfcb3,
-        #fcfcb3,
-        #fcfcb3,
-        #fcfcb3,
-        #fcfcb3,
-        #fcfcb3,
-        #fd7d01ee,
-        #fd7d01dd,
-        #fd7d01bb,
-        #fd7d0199
+        circle at 5% 10%,
+        #fcfcb3 50px,
+        rgba(233, 64, 8, 0.6) 160px
       );
-      transform: rotate(200deg);
-      /* box-shadow: 0 0 3px 2.1rem #dde7eeaa; */
     }
   }
 
   // Card Cloudy Night
-
   .card-cloudy-night {
-    background: linear-gradient(90deg, #2862f7, #b97fda);
+    background: linear-gradient(90deg, $deep_blue_color, $purple_color);
 
+    .circle,
+    .cloud-thunder,
+    .rain-drops:not(:nth-of-type(2), :nth-of-type(3)) {
+      display: none;
+    }
     .image-container-wrapper {
       position: absolute;
       height: 95%;
@@ -178,7 +169,51 @@ body {
       }
     }
 
-    .dots {
+    // .rain-drops {
+    //   &:first-of-type {
+    //     .drops {
+    //       position: absolute;
+    //       aspect-ratio: 1/1;
+    //       border-radius: 50%;
+    //       border: none;
+    //       background: #fff5;
+    //       box-shadow: 0 0 8px #fff;
+    //       &:nth-of-type(1) {
+    //         height: 10px;
+    //         right: 40%;
+    //         top: 10%;
+    //       }
+    //       &:nth-of-type(2) {
+    //         height: 20px;
+    //         right: 30%;
+    //         top: 20%;
+    //       }
+    //       &:nth-of-type(3) {
+    //         height: 8px;
+    //         right: 15%;
+    //         top: 10%;
+    //       }
+    //     }
+    //   }
+    //   &:last-of-type {
+    //     .drops:nth-of-type(1) {
+    //       height: 9px;
+    //       right: 32%;
+    //       top: 50%;
+    //     }
+    //     .drops:nth-of-type(2) {
+    //       height: 5px;
+    //       right: 29%;
+    //       top: 70%;
+    //     }
+    //     .drops:nth-of-type(3) {
+    //       height: 17px;
+    //       right: 40%;
+    //       top: 80%;
+    //     }
+    //   }
+    // }
+    .drops {
       position: absolute;
       aspect-ratio: 1/1;
       border-radius: 50%;
@@ -186,41 +221,46 @@ body {
       background: #fff5;
       box-shadow: 0 0 8px #fff;
     }
-    .dot-1 {
+    .drops:nth-child(1) {
       height: 10px;
       right: 40%;
       top: 10%;
     }
-    .dot-2 {
+    .drops:nth-of-type(2) {
       height: 20px;
       right: 30%;
       top: 20%;
     }
-    .dot-3 {
-      height: 8px;
-      right: 15%;
-      top: 10%;
+    .drops:nth-of-type(3) {
+      height: 8px !important;
+      right: 15% !important;
+      top: 10% !important;
     }
-    .dot-4 {
-      height: 9px;
-      right: 32%;
-      top: 50%;
+    .drop-1 {
+      height: 9px !important;
+      right: 32% !important;
+      top: 50% !important;
     }
-    .dot-5 {
-      height: 5px;
-      right: 29%;
-      top: 70%;
+    .drop-2 {
+      height: 5px !important;
+      right: 29% !important;
+      top: 70% !important;
     }
-    .dot-6 {
-      height: 17px;
-      right: 40%;
-      top: 80%;
+    .drop-3 {
+      height: 17px !important;
+      right: 40% !important;
+      top: 80% !important;
     }
   }
 
   // Card Rain
   .card-rain {
-    background: linear-gradient(90deg, #01bea4, #8dfba3);
+    background: linear-gradient(90deg, $green_color, $light_green_color);
+    .circle,
+    .cloud-moon,
+    .dots {
+      display: none;
+    }
     .image-container-wrapper {
       position: absolute;
       height: 95%;
@@ -245,7 +285,6 @@ body {
       }
     }
     .rain-drops {
-      //   background: #000;
       position: absolute;
       height: 1rem;
       width: 15rem;
